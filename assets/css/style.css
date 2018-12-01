@@ -1,0 +1,16 @@
+body {
+    background: lightgrey;
+}
+
+h1 {
+    text-align: center;
+}
+
+h5 {
+    margin-top: 10px;
+}
+
+.city-btn {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
