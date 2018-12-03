@@ -37,7 +37,7 @@ function displayGifInfo() {
     
     var cityinput = $(this).attr("data-name");
 
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + cityinput + "&api_key=mYMYcYdwV7sCP8ZIP7isZ1s1PDUdHo5y&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + cityinput + "&api_key=mYMYcYdwV7sCP8ZIP7isZ1s1PDUdHo5y&limit=10";
     
     $.ajax({
         url: queryURL,
