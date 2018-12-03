@@ -2,11 +2,35 @@
 var cities = ["Cleveland", "Los Angeles", "Chicago", "New York"];
 
 // add cities already searched to array below
-
 var citiesUsed = [];
 
 // displays initial cities as example buttons
 renderButtons();
+
+// click handler that runs displayGifInfo function to display all 10 relevant gifs for each city
+$(document).on("click", ".city-btn", displayGifInfo);
+
+// click handler that runs startPauseGIF to still and animate gifs
+$("img").on("click", startPauseGIF);
+
+// click handler that runs addCity function to add city button
+$("#inputSubmitButton").on("click", addCity);
+b
+function renderButtons () {
+    for (var i = 0; i < cities.length; i++) {
+        var cityButton = $("<button>");
+        
+        cityButton.addClass("city-btn btn btn-info");
+        cityButton.attr("data-name", cities[i]);
+        cityButton.text(cities[i]);
+
+        $("#buttons-div").append(cityButton);
+
+        citiesUsed.push(cities[i]);
+    } 
+
+    cities = [];
+}
 
 // function to grab city name and call GIPHY API with city name as part of query
 function displayGifInfo() {
@@ -41,9 +65,7 @@ function displayGifInfo() {
     });
 }
 
-//function to start and stop gif by changing gif image url to still version or animated version
-$("img").on("click", function () {
-
+function startPauseGIF () {
     var state = $(this).attr("data-state");
     
     if (state === "animated") { 
@@ -53,7 +75,7 @@ $("img").on("click", function () {
         $(this).attr("src", $(this).attr("data-animated"));
         $(this).attr("data-state", "animated");
     }
-});
+}
 
 // adds new city button by pushing to the cities array and then running the renderButtons function. 
 // Makes sure user has not entered a previous city by comparing user input with contents of citiesUsed array.
@@ -71,29 +93,7 @@ function addCity () {
     }
 }
 
-// loops through cities array and generates a button for each city with following chracteristics
-function renderButtons () {
-    for (var i = 0; i < cities.length; i++) {
-        var cityButton = $("<button>");
-        
-        cityButton.addClass("city-btn btn btn-info");
-        cityButton.attr("data-name", cities[i]);
-        cityButton.text(cities[i]);
 
-        $("#buttons-div").append(cityButton);
-
-        citiesUsed.push(cities[i]);
-    } 
-
-    cities = [];
-    
-}
-
-// click handler that runs displayGifInfo function to display all 10 relevant gifs for each city
-$(document).on("click", ".city-btn", displayGifInfo);
-
-// click handler that runs addCity function to add city button
-$("#inputSubmitButton").on("click", addCity);
 
 
 

@@ -1,1 +1,4 @@
 # GIF-API-Widget
+For this project, I have created a GIF generator for various user entered cities. For each city a user inputs, a button is created that when clicked, calls the GIPHY API and generates/displays 10 of the most popular gifs for that city. Additionally, when a user clicks on a gif, the gif pauses and then when clicked again, it animates. To achieve this functionality, I have written logic to dynamically change the src of the gif image to the still image provided by the GIPHY API and vice versa. Finally, if a user attempts to enter a city they have already done so, they are alerted to enter a different city.
+
+Overall, this project demonstrates knowledge of making API calls, working with JSON objects, Javascript functions, JQuery click handlers, and JQuery DOM interaction.
