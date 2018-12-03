@@ -15,7 +15,7 @@ $("img").on("click", startPauseGIF);
 
 // click handler that runs addCity function to add city button
 $("#inputSubmitButton").on("click", addCity);
-b
+
 function renderButtons () {
     for (var i = 0; i < cities.length; i++) {
         var cityButton = $("<button>");
